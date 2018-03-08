@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            var myEl = document.getElementById('b1');
+            myEl.addEventListener('click', function() {
+              alert('Hello world');
+                console.log(req.session.views)
+          }, false);
+        });
+        </script>
+    </head>
+    <body>
+        <p> Session Counter:
+             <%= requestingSession %>
+         </p>
+        <form action="/add2.ejs" method="post">
+            <input type="submit" value="submit" name="b1">
+            <button id="b1"> Submit </button>
+        </form>
+        <% if("#b1" === true){
+            requestingSession;
+        } %>
+
+    </body>
+</html>
